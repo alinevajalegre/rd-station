@@ -1,0 +1,16 @@
+:root {
+    --color-primary-shade-1: #0B485B;
+    --color-primary: #19C1CE;
+    --color-primary-shade-5: #07E5EB;
+
+    --color-highlight: #F2BF4E;
+    --color-highlight-50: #F4CA6D;
+
+    --color-black: #000000;
+    --color-gray-100: #212429;
+    --color-gray-70: #7E8A98;
+    --color-gray-60: #97A1AC; 
+    --color-gray-30: #CFD3D8;
+    --color-gray-10: #F1F3F5;
+    --color-white: #FFFFFF; 
+}
