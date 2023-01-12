@@ -34,16 +34,18 @@
         <p class="gray-text">Não precisa cadastrar cartão de crédito. 😉</p>
         <div class="form-line"></div>
 
-        <form action="https://rdstation-signup-psel.herokuapp.com" method="POST">
+        <!-- https://rdstation-signup-psel.herokuapp.com -->
+
+        <form action="" method="POST">
           <label for="name">Diga, qual seu nome?</label><br>
-          <input type="text" id="name" name="name" placeholder="Insira seu nome" class="form-field"><br><br>
+          <input type="text" id="name" name="name" placeholder="Insira seu nome" class="form-field" required="true"><br><br>
           <label for="email" type="email">Seu email de trabalho</label><br>
-          <input type="text" id="email" name="email" placeholder="Insira seu e-mail" class="form-field"><br><br>
+          <input type="text" id="email" name="email" placeholder="Insira seu e-mail" class="form-field" required="true" onfocusout="validateEmail()"><br><br>
           <label for="phone">Seu telefone</label><br>
           <input type="tel" id="phone" name="phone" placeholder="Insira seu número de telefone com DDD"
-            class="form-field"><br><br>
+            class="form-field" required="true" onfocusout="validateTel()"><br><br>
           <label for="occupation">Seu cargo de ocupação</label><br>
-          <select name="occupation" id="occupation" class="form-field" placeholder="Selecione uma opçao">
+          <select name="occupation" id="occupation" class="form-field" placeholder="Selecione uma opçao" required="true">
             <option value="job-title-1">Sócio(a) / CEO / Proprietário(a)</option>
             <option value="job-title-2">Diretor(a) de Vendas</option>
             <option value="job-title-3">Diretor(a) de Marketing</option>
@@ -59,15 +61,15 @@
             <option value="job-title-13">Outros Cargos</option>
           </select><br><br>
           <label for="password">Crie uma senha</label><br>
-          <input type="password" id="password" name="password" placeholder="" class="form-field"><br><br>
+          <input type="password" id="password" name="password" placeholder="" class="form-field" required="true" onfocusout="validatePassword()"><br><br>
           <label for="confirm-password">Confirme sua senha</label><br>
-          <input type="password" id="confirm-password" name="confirm-password" placeholder="" class="form-field"><br><br>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="" class="form-field" required="true" onfocusout="validateEqualPassword()"><br><br>
           <label>Qual o site da sua empresa?</label><br><br>
           <input type="radio" id="radio-my-site" class="radio-button" name="radio-my-site" value="radio-my-site">
           <label for="radio-my-site" class="non-bold-label">Meu site é</label><br><br>
-          <input type="url" id="my-site" name="my-site" placeholder="Insira o endereço do seu site"
-            class="form-field"><br><br>
-          <input type="radio" id="doesnt-have-site" class="radio-button" name="doesnt-have-site" value="doesnt-have-site">
+          <input type="text" id="my-site" name="my-site" placeholder="Insira o endereço do seu site"
+            class="form-field" onfocusout="validateURL()" required="true"><br><br>
+          <input type="radio" id="doesnt-have-site" class="radio-button" name="radio-my-site" value="doesnt-have-site" onclick="doesntHaveSite()">
           <label for="doesnt-have-site" class="non-bold-label">Ainda não tenho site</label><br>
           <ul class="terms-of-use">
             <li>Ao criar minha conta estou de acordo com os <a
