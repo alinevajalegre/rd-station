@@ -15,6 +15,7 @@ ul {
 }
 
 header {
+    z-index: 3;
     align-items: center;
     display: flex;
     height: 80px;
@@ -75,6 +76,15 @@ nav li {
     margin: 40px 108px 0px 100px;
     border-radius: 4px;
     z-index: 2;
+}
+
+.big-triangle {
+    position: absolute;
+    right: 0px;
+    top: 81px;
+    border-style: solid;
+    border-width: 0 850px 420px 0;
+    border-color: transparent var(--color-white) transparent transparent;
 }
 
 .flex-container {
@@ -482,7 +492,7 @@ form label {
     margin-top: 144px;
 }
 
-.thumbnail {
+.video-frame {
     z-index: -1;
     height: 365px;
     width: 649px;
@@ -491,12 +501,6 @@ form label {
 .left-video-content {
     margin-top: 100px;
     margin-right: 50px;
-}
-
-.play-button {
-    background: url('assets/play-button.svg');
-    position: absolute;
-    z-index: 2;
 }
 
 #occupation,
@@ -739,3 +743,10 @@ form label {
 a {
     color: var(--color-primary-shade-1)
 }
+
+.text-color-primary {
+    color: var(--color-primary)
+}
+
+
+/* ------- Menu dropdown ------ */
