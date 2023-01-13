@@ -36,7 +36,7 @@
 
         <!-- https://rdstation-signup-psel.herokuapp.com -->
 
-        <form action="" method="POST">
+        <div class="contact-form" id="contact-form">
           <label for="name">Diga, qual seu nome?</label><br>
           <input type="text" id="name" name="name" placeholder="Insira seu nome" class="form-field" required="true"><br><br>
           <label for="email" type="email">Seu email de trabalho</label><br>
@@ -61,13 +61,13 @@
             <option value="job-title-13">Outros Cargos</option>
           </select><br><br>
           <label for="password">Crie uma senha</label><br>
-          <input type="password" id="password" name="password" placeholder="" class="form-field" required="true" onfocusout="validatePassword()"><br><br>
+          <input type="password" id="password" name="password" placeholder="" class="form-field" required="true" onfocusout="validatePassword()"><img src="assets/closed-eye.svg" class="show-pass" id="showPass" onclick="showPass('showPass','password')"/></input><br><br>
           <label for="confirm-password">Confirme sua senha</label><br>
-          <input type="password" id="confirm-password" name="confirm-password" placeholder="" class="form-field" required="true" onfocusout="validateEqualPassword()"><br><br>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="" class="form-field" required="true" onfocusout="validateEqualPassword()"><img src="assets/closed-eye.svg" class="show-pass" id="showConfirmPass" onclick="showPass('showConfirmPass','confirm-password')"/></input><br><br>
           <label>Qual o site da sua empresa?</label><br><br>
           <input type="radio" id="radio-my-site" class="radio-button" name="radio-my-site" value="radio-my-site">
           <label for="radio-my-site" class="non-bold-label">Meu site é</label><br><br>
-          <input type="text" id="my-site" name="my-site" placeholder="Insira o endereço do seu site"
+          <input type="url" id="my-site" name="my-site" placeholder="Insira o endereço do seu site"
             class="form-field" onfocusout="validateURL()" required="true"><br><br>
           <input type="radio" id="doesnt-have-site" class="radio-button" name="radio-my-site" value="doesnt-have-site" onclick="doesntHaveSite()">
           <label for="doesnt-have-site" class="non-bold-label">Ainda não tenho site</label><br>
@@ -79,8 +79,8 @@
             <li>Ao preencher o formulário, concordo em receber comunicações de acordo com meus interesses.</li>
             <li>*Você pode alterar suas permissões de comunicação a qualquer tempo.</li>
           </ul>
-          <button class="yellow-large-button">criar minha conta</button>
-        </form>
+          <button class="yellow-large-button" id="submit" onclick="validateForm()">criar minha conta</button>
+        </div>
       </div>
 
     </section>

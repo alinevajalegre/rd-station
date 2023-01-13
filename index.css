@@ -88,11 +88,11 @@ nav li {
     border-top: 1px solid var(--color-gray-30);
 }
 
-form {
+.contact-form {
     margin-left: 24px;
 }
 
-form label {
+.contact-form label {
     font-size: 16px;
     font-weight: bold;
 }
@@ -738,4 +738,8 @@ form label {
 
 a {
     color: var(--color-primary-shade-1)
+}
+
+.show-pass{
+    position: absolute;
 }
