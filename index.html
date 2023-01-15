@@ -2,7 +2,10 @@
 <html>
 
 <head>
+  <title>RDStation - Teste FrontEnd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="" href="favicon.ico">
   <script src="index.js"></script>
 </head>
 
@@ -22,6 +25,7 @@
     </nav>
   </header>
 
+  <div class="gray-background"></div>
   <section class="flex-container">
     <div class="main-text">
       <h1 class="main-title">Gere mais <span class="text-decoration">oportunidades</span></br> para seu negócio</h1>
@@ -37,55 +41,65 @@
       <div class="form-line"></div>
       <!-- https://rdstation-signup-psel.herokuapp.com -->
 
-      <form action="" method="POST">
-        <label for="name">Diga, qual seu nome?</label><br>
-        <input type="text" id="name" name="name" placeholder="Insira seu nome" class="form-field"
-          required="true"><br><br>
-        <label for="email" type="email">Seu email de trabalho</label><br>
-        <input type="text" id="email" name="email" placeholder="Insira seu e-mail" class="form-field" required="true"
-          onfocusout="validateEmail()"><br><br>
-        <label for="phone">Seu telefone</label><br>
-        <input type="tel" id="phone" name="phone" placeholder="Insira seu número de telefone com DDD" class="form-field"
-          required="true" onfocusout="validateTel()"><br><br>
-        <label for="occupation">Seu cargo de ocupação</label><br>
-        <select name="occupation" id="occupation" class="form-field" placeholder="Selecione uma opçao" required="true">
-          <option value="job-title-1">Sócio(a) / CEO / Proprietário(a)</option>
-          <option value="job-title-2">Diretor(a) de Vendas</option>
-          <option value="job-title-3">Diretor(a) de Marketing</option>
-          <option value="job-title-4">Diretor(a) Outras Áreas</option>
-          <option value="job-title-5">Gerente de Marketing</option>
-          <option value="job-title-6">Gerente de Vendas</option>
-          <option value="job-title-7">Coordenador(a)/Supervisor(a) de Marketing</option>
-          <option value="job-title-8">Coordenador(a)/Supervisor(a) de Vendas</option>
-          <option value="job-title-9">Analista/Assistente de Marketing</option>
-          <option value="job-title-10">Analista/Assistente de Vendas</option>
-          <option value="job-title-11">Vendedor(a) / Executivo(a) de Contas</option>
-          <option value="job-title-12">Estudante</option>
-          <option value="job-title-13">Outros Cargos</option>
-        </select><br><br>
-        <label for="password">Crie uma senha</label><br>
-        <input type="password" id="password" name="password" placeholder="" class="form-field" required="true"
-          onfocusout="validatePassword()"><br><br>
-        <label for="confirm-password">Confirme sua senha</label><br>
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="" class="form-field"
-          required="true" onfocusout="validateEqualPassword()"><br><br>
-        <label>Qual o site da sua empresa?</label><br><br>
-        <input type="radio" id="radio-my-site" class="radio-button" name="radio-my-site" value="radio-my-site">
-        <label for="radio-my-site" class="non-bold-label">Meu site é</label><br><br>
-        <input type="text" id="my-site" name="my-site" placeholder="Insira o endereço do seu site" class="form-field"
-          onfocusout="validateURL()" required="true"><br><br>
-        <input type="radio" id="doesnt-have-site" class="radio-button" name="radio-my-site" value="doesnt-have-site"
-          onclick="doesntHaveSite()">
-        <label for="doesnt-have-site" class="non-bold-label">Ainda não tenho site</label><br>
-        <ul class="terms-of-use">
-          <li>Ao criar minha conta estou de acordo com os <a
-              href="https://legal.rdstation.com/pt-BR/rdstation-services-agreement/" target="_blank">termos de uso</a>
-            do software e <a href="https://legal.rdstation.com/pt/privacy-policy/" target="_blank">política de
-              privacidade</a>.</li>
-          <li>Ao preencher o formulário, concordo em receber comunicações de acordo com meus interesses.</li>
-          <li>*Você pode alterar suas permissões de comunicação a qualquer tempo.</li>
-        </ul>
-        <button class="yellow-large-button">criar minha conta</button>
+      <!-- https://rdstation-signup-psel.herokuapp.com -->
+
+      <iframe id="dont-redirect" name="dont-redirect" style="display:none;"></iframe>
+      <div id="form-div">
+        <form action="https://rdstation-signup-psel.herokuapp.com" method="POST" target="dont-redirect"
+          class="contact-form" id="contact-form">
+          <label for="name">Diga, qual seu nome?</label><br>
+          <input type="text" id="name" name="name" placeholder="Insira seu nome" class="form-field"
+            required="true"><br><br>
+          <label for="email" type="email">Seu email de trabalho</label><br>
+          <input type="text" id="email" name="email" placeholder="Insira seu e-mail" class="form-field" required="true"
+            onfocusout="validateEmail()"><br><br>
+          <label for="phone">Seu telefone</label><br>
+          <input type="tel" id="phone" name="phone" maxlength="15" placeholder="Insira seu número de telefone com DDD"
+            class="form-field" required="true" onkeyup="validateTel()"><br><br>
+          <label for="occupation">Seu cargo de ocupação</label><br>
+          <select name="occupation" id="occupation" class="form-field" placeholder="Selecione uma opçao"
+            required="true">
+            <option value="job-title-1">Sócio(a) / CEO / Proprietário(a)</option>
+            <option value="job-title-2">Diretor(a) de Vendas</option>
+            <option value="job-title-3">Diretor(a) de Marketing</option>
+            <option value="job-title-4">Diretor(a) Outras Áreas</option>
+            <option value="job-title-5">Gerente de Marketing</option>
+            <option value="job-title-6">Gerente de Vendas</option>
+            <option value="job-title-7">Coordenador(a)/Supervisor(a) de Marketing</option>
+            <option value="job-title-8">Coordenador(a)/Supervisor(a) de Vendas</option>
+            <option value="job-title-9">Analista/Assistente de Marketing</option>
+            <option value="job-title-10">Analista/Assistente de Vendas</option>
+            <option value="job-title-11">Vendedor(a) / Executivo(a) de Contas</option>
+            <option value="job-title-12">Estudante</option>
+            <option value="job-title-13">Outros Cargos</option>
+          </select><br><br>
+          <label for="password">Crie uma senha</label><br>
+          <input type="password" id="password" name="password" maxlength="10" placeholder="" class="form-field"
+            required="true" onfocusout="validatePassword()"><img src="assets/closed-eye.svg" class="show-pass"
+            id="showPass" onclick="showPass('showPass','password')" /></input><br><br>
+          <label for="confirm-password">Confirme sua senha</label><br>
+          <input type="password" id="confirm-password" maxlength="10" name="confirm-password" placeholder=""
+            class="form-field" required="true" onfocusout="validateEqualPassword()"><img src="assets/closed-eye.svg"
+            class="show-pass" id="showConfirmPass"
+            onclick="showPass('showConfirmPass','confirm-password')" /></input><br><br>
+          <label>Qual o site da sua empresa?</label><br><br>
+          <input type="radio" id="radio-my-site" class="radio-button" name="radio-my-site" value="radio-my-site">
+          <label for="radio-my-site" class="non-bold-label">Meu site é</label><br><br>
+          <input type="url" id="my-site" name="my-site" placeholder="Insira o endereço do seu site" class="form-field"
+            onfocusout="validateURL()" required="true"><br><br>
+          <input type="radio" id="doesnt-have-site" class="radio-button" name="radio-my-site" value="doesnt-have-site"
+            onclick="doesntHaveSite()">
+          <label for="doesnt-have-site" class="non-bold-label">Ainda não tenho site</label><br>
+          <ul class="terms-of-use">
+            <li>Ao criar minha conta estou de acordo com os <a
+                href="https://legal.rdstation.com/pt-BR/rdstation-services-agreement/" target="_blank">termos de uso</a>
+              do software e <a href="https://legal.rdstation.com/pt/privacy-policy/" target="_blank">política de
+                privacidade</a>.</li>
+            <li>Ao preencher o formulário, concordo em receber comunicações de acordo com meus interesses.</li>
+            <li>*Você pode alterar suas permissões de comunicação a qualquer tempo.</li>
+          </ul>
+          <button class="yellow-large-button" id="submit" onclick="validateForm()">criar minha conta</button>
+      </div>
       </form>
     </div>
 
@@ -104,24 +118,43 @@
   <div class="flex-container">
     <div class="results-image">
       <img src="assets/woman-writing.svg" alt="Imagem de uma mulher sorrindo escrevendo em uma lousa" id="woman-writing"
-        width="800" height="500" class="woman-writing">
+        width="800" height="500">
     </div>
-
 
     <div class="results-text">
       <h3>Resultados previsíveis<br> e mais clientes para sua empresa</h3>
       <p>Torne sua atuação no Marketing Digital mais eficaz</p>
-      <p><span class='check-icon'></span><strong>Ferramentas intuitivas</strong> e com modelos prontos, vídeos<br>
-        explicativos e passo a passo guiado</p>
-      <p><span class='check-icon'></span><strong>Implementação com especialistas</strong> focada em planejamento e<br>
-        prática (nos planos Marketing Pro e Enterprise)</p>
-      <p><span class='check-icon'></span><strong>Time de especialistas em Sucesso do Cliente</strong> para apoiar na<br>
-        otimização da estratégia em cada fase da sua jornada (nos<br> planos Marketing Pro e Enterprise)</p>
-      <p><span class='check-icon'></span><strong>Suporte técnico</strong> em português, espanhol e inglês para tirar<br>
-        dúvidas, <strong>com 97% de satisfação</strong> entre nossos clientes</p>
-      <p><span class='check-icon'></span><strong>Muito conteúdo educativo</strong>, eventos, cursos da <a
-          href="https://rduniversity.com.br/">RD University</a> e<br> comunidades para você continuar evoluindo</p>
+
+      <ul>
+        <li>
+          <span class='check-icon'></span>
+          <strong>Ferramentas intuitivas</strong> e com modelos prontos, vídeos<br>
+          explicativos e passo a passo guiado
+        </li>
+        <li>
+          <span class='check-icon'></span>
+          <strong>Implementação com especialistas</strong> focada em planejamento e<br>
+          prática (nos planos Marketing Pro e Enterprise)
+        </li>
+        <li>
+          <span class='check-icon'></span>
+          <strong>Time de especialistas em Sucesso do Cliente</strong> para apoiar na<br>
+          otimização da estratégia em cada fase da sua jornada (nos<br> planos Marketing Pro e Enterprise)
+        </li>
+        <li>
+          <span class='check-icon'></span>
+          <strong>Suporte técnico</strong> em português, espanhol e inglês para tirar<br>
+          dúvidas, <strong>com 97% de satisfação</strong> entre nossos clientes
+        </li>
+        <li>
+          <span class='check-icon'></span>
+          <strong>Muito conteúdo educativo</strong>, eventos, cursos da <a href="https://rduniversity.com.br/">RD
+            University</a> e<br> comunidades para você continuar evoluindo
+        </li>
+      </ul>
     </div>
+
+    <div class="shape"></div>
   </div>
 
   <section class="cards-section">
@@ -213,16 +246,22 @@
       resultados e um<br>
       ecossistema que apoia o seu negócio do planejamento à prática.
     </p>
-    <button class="yellow-small-button marketing-text">Criar conta gratuita</button>
+
+    <button class="yellow-small-button marketing-text">
+      <a href="https://app.rdstation.com.br/signup" target="_blank">
+        Criar conta gratuita
+      </a>
+    </button>
   </section>
 
   <section class="video-section flex-container">
+    <div class="small-gray-background"></div>
     <div class="left-video-content">
       <h3>Entenda melhor como o RD <br>
         Station Marketing funciona na <br>
         prática</h3>
 
-      <button class="gray-large-button">assista a demonstração</button>
+      <button class="gray-large-button">assista a demonstração<img src="assets/play-icon.svg" alt="Ícone play"></button>
     </div>
 
     <!-- <a href="https://www.youtube.com/watch?v=lGCesaaLi4s" target="_blank"> -->
@@ -238,22 +277,74 @@
       <h2 class="section-marketing-title">Torne sua operação de Marketing <br>ainda mais poderosa</h2>
       <p>O RD Station Marketing se conecta as principais ferramentas<br>
         nacionais e internacionais </p>
-      <button class="large-blue-button">criar conta gratuita</button>
+      <a href="https://app.rdstation.com.br/signup" target="_blank">
+        <button class="large-blue-button">criar conta gratuita</button>
+      </a>
     </div>
+
     <div class="right-marketing-content">
-      <div class="icon-style">
-        <img src="assets/rd-small-logo.svg" alt="logo da RD Station" id="mini-logo" class="images" />
-        <img src="assets/salesforce.svg" alt="logo da Salesforce" id="logo-salesforce" class="images" />
-        <img src="assets/google.svg" alt="logo do Google" id="logo-google" class="images" />
-        <img src="assets/facebook-blue-logo.svg" alt="logo do Facebook" id="logo-facebook" class="images" />
-        <img src="assets/linkedin-blue-icon.svg" alt="logo do LinkedIn" id="logo-linkedin" class="images" />
-        <img src="assets/wordpress-icon.svg" alt="logo do WordPress" id="logo-wordpress" class="images" />
-        <img src="assets/hotmart-icon.svg" alt="logo da Hotmart" id="logo-hotmart" class="images" />
-        <img src="assets/pagseguro.svg" alt="logo da PagSeguro" id="logo-pagseguro" class="images" />
-        <img src="assets/shopify-icon.svg" alt="logo da Shopify" id="logo-shopify" class="images" />
-        <img src="assets/zapier-icon.svg" alt="logo da Zapier" id="logo-zapier" class="images" />
-      </div>
-    </div>
+      <ul class="logos">
+        <li>
+          <a href="#">
+            <img src="assets/rd-small-logo.svg" alt="logo da RD Station">
+            <p>RD Station CRM</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/salesforce.svg" alt="Logo do Salesforce">
+            <p>Salesforce</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/google.svg" alt="Logo do Google">
+            <p>Google</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/facebook-blue-logo.svg" alt="logo do Facebook">
+            <p>Facebook</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/linkedin-blue-icon.svg" alt="Logo do LinkedIn">
+            <p>LinkedIn</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/wordpress-icon.svg" alt="Logo do Wordpress">
+            <p>Wordpress</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/hotmart-icon.svg" alt="Logo da Hotmart">
+            <p>Hotmart</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/pagseguro.svg" alt="Logo da PagSeguro">
+            <p>PagSeguro</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/shopify-icon.svg" alt="Logo da Shopify">
+            <p>Shopify</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/zapier-icon.svg" alt="Logo da Zapier">
+            <p>Zapier</p>
+          </a>
+        </li>
+      </ul>
   </section>
 
   <footer class="footer">
