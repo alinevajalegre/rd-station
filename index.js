@@ -14,14 +14,13 @@ function validateEmail(){
 	}
 }
 
-function validateTel(e){
-	var v=e.target.value.replace(/\D/g,"");
+function validateTel(){
+	
+	let tel = document.getElementById("phone");
 
-	v=v.replace(/^(\d\d)(\d)/g,"($1)$2"); 
-
-	v=v.replace(/(\d{5})(\d)/,"$1-$2");    
-
-	e.target.value = v;
+	tel.value = tel.value.replace(/\D/g,'')
+	tel.value = tel.value.replace(/(\d{2})(\d)/,"($1) $2")
+	tel.value = tel.value.replace(/(\d)(\d{4})$/,"$1-$2")
 }
 
 function validatePassword(){
@@ -54,7 +53,7 @@ function validateURL(){
 
 	if(mySite.checked == false){
 		mySite.checked = true;
-		let field =  document.getElementById("my-site");
+		let field = document.getElementById("my-site");
 		field.required = true;
 	}
 }
@@ -72,14 +71,14 @@ function validateEqualPassword(){
 function validateForm(){
 
 	if(emailOk == true && telOk == true && passwordOk == true){
-		alert("Tá tudo certo");
-		document.getElementById("contact-form").innerHTML = "<h1>Obrigado!, entraremos em contato</h1>";
+		let form = document.getElementById("contact-form");
+		
+		form.submit();	
+		form.innerHTML = "<h1>Obrigado!, entraremos em contato</h1>";
 	}
 	else{
 		alert("Não foi possível enviar seu formulário. Verifique se todos os dados estão digitados corretamente.");
 	}
-
-
 }
 
 function showPass(image, field){
